@@ -1,12 +1,86 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="MainDemo">
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Edit">
+        <ActionLink ActionId="ClearTaskAction" Index="0" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="ClearTaskAction" Removed="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
   </BOModel>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.1.6.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="Contact_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="MyActionContainer" ActionContainer="MyCategory" Caption="MyActionContainer(35)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="48.157248157248155">
+            <LayoutGroup Id="Contact" RelativeSize="36.98979591836735">
+              <LayoutGroup Id="Contact_col1" RelativeSize="49.92481203007519">
+                <LayoutItem Id="WebPageAddress" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="NickName" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="SpouseName" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="TitleOfCourtesy" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+              <LayoutGroup Id="Contact_col2" RelativeSize="50.07518796992481">
+                <LayoutItem Id="Anniversary" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="Department" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Position" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Manager" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Person" RelativeSize="28.8265306122449">
+              <LayoutGroup Id="Person_col1" RelativeSize="49.92481203007519">
+                <LayoutItem Id="FirstName" RelativeSize="36.36363636363637" />
+                <LayoutItem Id="LastName" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="MiddleName" RelativeSize="36.36363636363637" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2" RelativeSize="50.07518796992481">
+                <LayoutItem Id="Birthday" RelativeSize="36.36363636363637" />
+                <LayoutItem Id="FullName" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="Email" RelativeSize="36.36363636363637" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="MyActionContainer" ViewItem="MyActionContainer" Index="2" RelativeSize="6.63265306122449" IsNewNode="True" />
+            <LayoutGroup Id="Party" Index="3" RelativeSize="27.551020408163264">
+              <LayoutItem Id="Photo" RelativeSize="27.77777777777778" />
+              <LayoutItem Id="Address1" RelativeSize="22.22222222222222" />
+              <LayoutItem Id="Address2" RelativeSize="22.22222222222222" />
+              <LayoutItem Id="DisplayName" RelativeSize="27.77777777777778" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="25.921375921375923">
+            <LayoutItem Id="Notes" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="25.921375921375923">
+            <LayoutGroup Id="Tasks" RelativeSize="100">
+              <LayoutItem Id="Tasks" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" RelativeSize="100">
+              <LayoutItem Id="PhoneNumbers" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DemoTask_ListView">
+      <Columns>
+        <ColumnInfo Id="Priority" Index="1" />
+        <ColumnInfo Id="DueDate" Index="2" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>

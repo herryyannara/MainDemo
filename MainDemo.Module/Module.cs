@@ -23,6 +23,7 @@ namespace MainDemo.Module {
     public sealed partial class MainDemoModule : ModuleBase {
         public MainDemoModule() {
             InitializeComponent();
+            AdditionalExportedTypes.Add(typeof(Note));
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);

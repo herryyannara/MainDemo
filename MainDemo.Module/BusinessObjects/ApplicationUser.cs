@@ -14,6 +14,13 @@ namespace MainDemo.Module.BusinessObjects {
     public class ApplicationUser : PermissionPolicyUser, IObjectSpaceLink, ISecurityUserWithLoginInfo {
         public ApplicationUser(Session session) : base(session) { }
 
+        private string email;
+        public string Email
+        {
+            get { return email; }
+            set { SetPropertyValue(nameof(Email), ref email, value); }
+        }
+
         [Browsable(false)]
         [Aggregated, Association("User-LoginInfo")]
         public XPCollection<ApplicationUserLoginInfo> LoginInfo {
